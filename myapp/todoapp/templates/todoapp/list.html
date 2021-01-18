@@ -9,5 +9,10 @@
  {% for task in tasks  %}
     <a href={% url 'update' task.id %}>Update</a>
     <a href={% url 'delete' task.id %}>Delete</a>
+    {% if task.complete == True %}
+    <strike>{{task}}</strike>
+    {% else %}
     <div>{{task}}</div>
+    {% endif %}
+    
  {% endfor %} 
